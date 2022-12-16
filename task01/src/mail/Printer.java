@@ -7,7 +7,7 @@ public class Printer {
     public static void printAll(List<Person> list, List<String> message) {
         // loop for each person in List
         // list.size()
-        for (int p = 0; p < 1; p++) {
+        for (int p = 0; p < list.size(); p++) {
             Person target = list.get(p); // target -> Person instance
             Set<String> keySet = target.getKeySet(); // Hashmap from Person instance
             List<String> newMessage = message; // does assigning array to variable create a copy?
@@ -23,11 +23,23 @@ public class Printer {
                         if (line.contains(key)) {
                             // conduct replace old string(key) with new string(value)
                             String value = target.getValue(key);
-                            line = line.replaceAll(key, value);
+                            // troubleshooting
+                            // System.out.println("Key: " + key);
+                            // System.out.println("Value: " + value);
+                            // System.out.printf("Value2: %s\n", value);
+
+                            line = line.replace(key, value);
                         }
                     } // for 3
-                    System.out.println(line);
-
+                    // printing editted line
+                    if (line.contains("\\n")) {
+                        String[] array = line.split("\\\\n");
+                        for (String s : array) {
+                            System.out.println(s);
+                        }
+                    } else {
+                        System.out.println(line);
+                    }
                 } // if else
             } // for 2
         } // for 1
