@@ -1,14 +1,13 @@
-package task02.calculator;
+package calculator;
 
 
-import static task02.calculator.Operators.*;
+import static calculator.Operators.*;
 
 import java.util.*;
 
 public class Main {
 
     private static Integer lastValue = 0; // holds value for $Last
-    private static Boolean stop = false;
     public static void main(String[] args) {
         System.out.println("Welcome.");
         
@@ -31,17 +30,11 @@ public class Main {
             Integer result = computeResults(operator, value1, value2);
             
             // 4. print results
-            System.out.println("value1: " + value1);
-            System.out.println("value2: " + value2);
-            System.out.println("results: " + result);
-            System.out.println("lastvalue: " + lastValue);
+            System.out.println(result);
+
 
         }
-        
-        
-        
-        // // CALL method to validate values
-        // System.out.println("$last = " + lastValue);
+        scanner.close();
 
     } //psvm
 
@@ -71,14 +64,11 @@ public class Main {
             case MULTIPLY:
                 result = value1 * value2;
                 break;
-            case EXIT:
-                System.out.println("stop while loop");
-                stop = true;
-                break;
             default:
         } // various operations
 
         lastValue = result; // update lastValue
+
         return result;
     } // computeResults
 

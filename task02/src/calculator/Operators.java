@@ -1,4 +1,4 @@
-package task02.calculator;
+package calculator;
 
 public class Operators {
     public static final String ADD = "+";
