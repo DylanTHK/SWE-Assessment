@@ -5,20 +5,29 @@ import java.util.*;
 public class Person {
     private Map<String, String> details = new HashMap<String, String>();
     // read template and store in array
-    private String[] key;
+    private String[] keys;
     private String line;
 
-    public Person(String[] key, String line) {
-        this.key = key;
+    public Person(String[] keys, String line) {
+        this.keys = keys;
         this.line = line;
     }
 
+    // populate hashmap
     public void addHashMap() {
-        String[] values = line.trim().split(" ");
-        
+        String[] values = line.trim().split(",");
+        for (int i = 0; i < values.length; i++) {
+            details.put(keys[i], values[i]);
+        }
+    }
+
+    // get values from hashmap
+    public String getValue(String key) {
+        String value = details.get(key);
+        return value;
     }
 
     public void viewMap() {
-        System.out.println(details);
+        System.out.println("Person HashMap: " + details); //****$$ REMOVE
     }
 }
