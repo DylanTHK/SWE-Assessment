@@ -17,7 +17,7 @@ public class Person {
     public void addHashMap() {
         String[] values = line.trim().split(",");
         for (int i = 0; i < values.length; i++) {
-            String formattedKey = String.format("<%s>",keys[i]);
+            String formattedKey = String.format("<<%s>>",keys[i]);
             details.put(formattedKey, values[i]);
         }
     }
@@ -30,5 +30,10 @@ public class Person {
 
     public void viewMap() {
         System.out.println("Person HashMap: " + details); //****$$ REMOVE
+    }
+
+    public Set<String> getKeySet() {
+        Set<String> set = details.keySet();
+        return set;
     }
 }
