@@ -13,8 +13,8 @@ public class Main {
     public static void main(String[] args) {
         // assume no error in args
         // args = "thankyou.csv thankyou.txt".split(" "); //****$$ REMOVE to detect args
-        String csvFile = "task01/src/mail/" + args[0]; 
-        String txtFile = "task01/src/mail/" + args[1]; 
+        String csvFile = args[0]; 
+        String txtFile = args[1]; 
         
         // reader for csv file
         try {
@@ -28,7 +28,7 @@ public class Main {
                 person.addHashMap();
                 people.add(person); // store Person instances in linkedlist
             }
-
+            br.close();
         } catch (FileNotFoundException e) {
             e.getStackTrace();
         } catch (IOException e) {
