@@ -6,7 +6,8 @@ public class Printer {
 
     public static void printAll(List<Person> list, List<String> message) {
         // loop for each person in List
-        for (int p = 0; p < list.size(); p++) {
+        // list.size()
+        for (int p = 0; p < 1; p++) {
             Person target = list.get(p);
             Set<String> keySet = target.getKeySet();
             List<String> newMessage = message; // does assigning array to variable create a copy?
