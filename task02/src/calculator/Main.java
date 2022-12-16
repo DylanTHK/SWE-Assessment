@@ -1,6 +1,5 @@
 package calculator;
 
-
 import static calculator.Operators.*;
 
 import java.util.*;
@@ -48,7 +47,6 @@ public class Main {
 
     // method to compute results
     public static Integer computeResults(String operator, Integer value1, Integer value2) {
-        // switch case for keywords
         // checking operator
         Integer result = 0;
         switch (operator) {

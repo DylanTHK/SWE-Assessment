@@ -5,29 +5,22 @@ import java.util.*;
 public class Printer {
 
     public static void printAll(List<Person> list, List<String> message) {
-        // loop for each person in List
-        // list.size()
         for (int p = 0; p < list.size(); p++) {
-            Person target = list.get(p); // target -> Person instance
-            Set<String> keySet = target.getKeySet(); // Hashmap from Person instance
-            List<String> newMessage = message; // does assigning array to variable create a copy?
+            Person target = list.get(p); 
+            Set<String> keySet = target.getKeySet(); 
+            List<String> newMessage = message; 
 
-            for (int l = 0; l < newMessage.size(); l++) { // loop for every line in newMessage
-                String line = newMessage.get(l); // line is newly selected line
-                // System.out.println(l + ": " + line);
-                // check for \n
+            // cleaning line in newMessage and printing
+            for (int l = 0; l < newMessage.size(); l++) { 
+                String line = newMessage.get(l);
+
                 if (line.length() <= 0) { // checks for valid lines
                     System.out.println(line);
                 } else { // check valid lines message line contains element in setKey
                     for (String key : keySet) {
+                        // replace old string(key) with new string(value)
                         if (line.contains(key)) {
-                            // conduct replace old string(key) with new string(value)
                             String value = target.getValue(key);
-                            // troubleshooting
-                            // System.out.println("Key: " + key);
-                            // System.out.println("Value: " + value);
-                            // System.out.printf("Value2: %s\n", value);
-
                             line = line.replace(key, value);
                         }
                     } // for 3

@@ -12,7 +12,6 @@ public class Main {
 
     public static void main(String[] args) {
         // assume no error in args
-        // args = "thankyou.csv thankyou.txt".split(" "); //****$$ REMOVE to detect args
         String csvFile = args[0]; 
         String txtFile = args[1]; 
         
