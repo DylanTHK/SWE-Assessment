@@ -17,7 +17,8 @@ public class Person {
     public void addHashMap() {
         String[] values = line.trim().split(",");
         for (int i = 0; i < values.length; i++) {
-            details.put(keys[i], values[i]);
+            String formattedKey = String.format("<%s>",keys[i]);
+            details.put(formattedKey, values[i]);
         }
     }
 

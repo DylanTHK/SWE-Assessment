@@ -7,10 +7,10 @@ public class Main {
     private static String[] keys;
     private static List<Person> people = new ArrayList<Person>(); 
     public static void main(String[] args) throws Exception {
-        // assume args are keyed in //****$$ EDIT
+        // assume args are keyed in 
         args = "thankyou.csv thankyou.txt".split(" ");
-        String csvFile = "task01/src/mail/" + args[0];
-        String txtFile = "task01/src/mail/" + args[1];
+        String csvFile = "task01/src/mail/" + args[0]; //****$$ EDIT to detect args
+        String txtFile = "task01/src/mail/" + args[1]; //****$$ EDIT
 
         
         // reader for csv file
@@ -24,7 +24,7 @@ public class Main {
                 Person person = new Person(keys, line);
                 person.addHashMap();
                 people.add(person);
-                person.viewMap();
+                person.viewMap(); //****$$ REMOVE
             }
 
         } catch (FileNotFoundException e) {
@@ -34,15 +34,11 @@ public class Main {
         }
 
  
-        // reader for txt file
+        // reader for txt file 
         // try {
-        //     FileReader fr = new FileReader(txtFile);
+        //     FileReader fr = new FileReader(txtFile); // reading txt file
         //     BufferedReader br = new BufferedReader(fr);
-        //     String line;
-        //     while ((line = br.readLine()) != null) {
-        //         // create Person class to store values and name (value name pair hashmap)
-        //         System.out.println("txt: " + line);
-        //     }
+        //     String lines = br.lines().;
 
         // } catch (FileNotFoundException e) {
         //     e.getStackTrace();
@@ -56,8 +52,9 @@ public class Main {
         // for each person, replace the text in << >> with values
         
 
-
     }
 
-    
+    public static void printTxt() {
+
+    }
 }
